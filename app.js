@@ -86,7 +86,7 @@ app.get('/test',(req,res)=>{
 })
 
 
-//test
+// este es un codigo de prueba 
 
 // app.get('/',(req,res)=>{
 //   res.render('players',{players})
