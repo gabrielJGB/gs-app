@@ -214,7 +214,7 @@ grid-area: 1/7/2/7;
       display: flex;
       flex-direction: column;
       width: 20%;
-      height: 100vh;
+      height: 95vh;
       overflow-y: scroll;
       position: fixed;
       top: 33px;
@@ -241,7 +241,14 @@ grid-area: 1/7/2/7;
       color: #efefef;
       font-family: monospace;
       font-size: 15px;
+
+      
       /*border-bottom: solid 2px #060606;*/
+    }
+
+
+    .player-list .player{
+      border-bottom: solid 1px #646464;
     }
 
 /*  .player:hover{
@@ -282,16 +289,14 @@ grid-area: 1/7/2/7;
   <a href="#final">Final</a>
 </div>
 
-<div data-occupied="false" class="player-list draggable-item" >
+<div class="player-list">
 
     <% players.forEach(player=>{ %>
-
-
     
-      <div data-occupied="false" class="player">
-        <span data-occupied="false" class="player-ranking"><%=player.ranking%></span>.
+      <div class="player" draggable="true">
+        <span class="player-ranking"><%=player.ranking%></span>.
         <img src="<%=player.flag%>" class="flag"> 
-        <span data-occupied="false" class="player-name"><%=player.name%></span>
+        <span class="player-name"><%=player.name%></span>
       </div>
     
 
