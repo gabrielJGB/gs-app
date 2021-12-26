@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-family: 'Rubik';
+      scroll-behavior: smooth !important;
+		}
+
+
+    .main-container{
+      margin: 10px 20px 10px 22%;
+
+    }
+
+
+    
+ 
+.section{
+  margin: 40px 0;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1fr 0.4fr 1fr 0.4fr 1fr 0.4fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    margin: 25px 0 ;
+    /* border: solid 1px; */
+}
+.table-header div{
+  text-align: center;
+  padding: 5px;
+  background-color: #505050;
+  color: #ffffff;
+}
+
+.t1{
+  grid-area: 1/1/2/2;
+}
+
+.t2{
+grid-area: 1/3/2/4;
+}
+
+.t3{
+grid-area: 1/5/2/6;
+}
+
+.t4{
+grid-area: 1/7/2/7;
+}
+
+.container {
+  display: grid;
+  grid-template-columns:2fr 0.5fr 0.5fr 0.5fr 2fr 0.5fr 0.5fr 0.5fr 2fr 0.5fr 0.5fr 0.5fr 2fr 0.5fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px;
+
+}
+	
+.c1,.c2,.c3,.c4,.c5,.c6,.c7{
+	border-top: solid 3px black;
+	border-bottom: solid 3px black;
+	border-right: solid 3px black;
+	border-left: 0;
+}
+
+.c8,.c9,.c10,.c11,.c12,.c13,.c14{
+  border-top: solid 3px black;
+}
+
+
+
+
+.m1      { grid-area: 1 / 1 / 3 / 3; }
+.m2      { grid-area: 4 / 1 / 6 / 3; }
+.m4      { grid-area: 10 / 1 / 12 / 3; }
+.m5      { grid-area: 13 / 1 / 15 / 3; }
+.m6      { grid-area: 16 / 1 / 18 / 3; }
+.m7      { grid-area: 19 / 1 / 21 / 3; }
+.m8      { grid-area: 22 / 1 / 24 / 3; }
+.m3      { grid-area: 7 / 1 / 9 / 3; }
+.c1      { grid-area: 2 / 3 / 5 / 4; }
+.c2      { grid-area: 8 / 3 / 11 / 4; }
+.c3      { grid-area: 14 / 3 / 17 / 4; }
+.c4      { grid-area: 20 / 3 / 23 / 4; }
+.c5      { grid-area: 4 / 7 / 10 / 8; }
+.c6      { grid-area: 16 / 7 / 21 / 8; }
+.c7      { grid-area: 7 / 11 / 18 / 12; }
+.c8      { grid-area: 4 / 4 / 5 / 5; }
+.c9      { grid-area: 10 / 4 / 11 / 5; }
+.c10      { grid-area: 16 / 4 / 17 / 5; }
+.c11      { grid-area: 21 / 4 / 22 / 5; }
+.c12      { grid-area: 7 / 8 / 8 / 9; }
+.c13      { grid-area: 18 / 8 / 19 / 9; }
+.c14      { grid-area: 12 / 12 / 13 / 13; }
+.bm1      { grid-area: 1 / 2 / 3 / 3; }
+.m1p1    { grid-area: 1 / 1 / 2 / 2; }
+.m1p2    { grid-area: 2 / 1 / 3 / 2; }
+.m2p1    { grid-area: 4 / 1 / 5 / 2; }
+.m2p2    { grid-area: 5 / 1 / 6 / 2; }
+.m3p1    { grid-area: 7 / 1 / 8 / 2; }
+.m3p2    { grid-area: 8 / 1 / 9 / 2; }
+.m4p1    { grid-area: 10 / 1 / 11 / 2; }
+.m4p2    { grid-area: 11 / 1 / 12 / 2; }
+.m5p1    { grid-area: 13 / 1 / 14 / 2; }
+.m5p2    { grid-area: 14 / 1 / 15 / 2; }
+.m6p1    { grid-area: 16 / 1 / 17 / 2; }
+.m6p2    { grid-area: 17 / 1 / 18 / 2; }
+.m7p1    { grid-area: 19 / 1 / 20 / 2; }
+.m7p2    { grid-area: 20 / 1 / 21 / 2; }
+.m8p1    { grid-area: 22 / 1 / 23 / 2; }
+.m8p2    { grid-area: 23 / 1 / 24 / 2; }
+.m9     { grid-area: 3 / 5 / 5 / 7; }
+.m10     { grid-area: 9 / 5 / 11 / 7; }
+.m11    { grid-area: 15 / 5 / 17 / 7; }
+.m12    { grid-area: 20 / 5 / 22 / 7; }
+.m13    { grid-area: 6 / 9 / 8 / 11; }
+.m14    { grid-area: 17 / 9 / 19 / 11; }
+.m15    { grid-area: 11 / 13 / 13 / 15; }
+.m9p1    { grid-area: 3 / 5 / 4 / 6; }
+.m9p2    { grid-area: 4 / 5 / 5 / 6; }
+.m10p1 { grid-area: 9 / 5 / 10 / 6; }
+.m10p2 { grid-area: 10 / 5 / 11 / 6; }
+.m11p1 { grid-area: 15 / 5 / 16 / 6; }
+.m11p2 { grid-area: 16 / 5 / 17 / 6; }
+.m12p1 { grid-area: 20 / 5 / 21 / 6; }
+.m12p2 { grid-area: 21 / 5 / 22 / 6; }
+.m13p1 { grid-area: 6 / 9 / 7 / 10; }
+.m13p2 { grid-area: 7 / 9 / 8 / 10; }
+.m14p1 { grid-area: 17 / 9 / 18 / 10; }
+.m14p2 { grid-area: 18 / 9 / 19 / 10; }
+.m15p1 { grid-area: 11 / 13 / 12 / 14; }
+.m15p2 { grid-area: 12 / 13 / 13 / 14; }
+.bm2   { grid-area: 4 / 2 / 6 / 3; }
+.bm3   { grid-area: 7 / 2 / 9 / 3; }
+.bm4   { grid-area: 10 / 2 / 12 / 3; }
+.bm5   { grid-area: 13 / 2 / 15 / 3; }
+.bm6   { grid-area: 16 / 2 / 18 / 3; }
+.bm7   { grid-area: 19 / 2 / 21 / 3; }
+.bm8   { grid-area: 22 / 2 / 24 / 3; }
+.bm9   { grid-area: 3 / 6 / 5 / 7; }
+.bm10   { grid-area: 9 / 6 / 11 / 7; }
+.bm11   { grid-area: 15 / 6 / 17 / 7; }
+.bm12   { grid-area: 20 / 6 / 22 / 7; }
+.bm13   { grid-area: 6 / 10 / 8 / 11; }
+.bm14   { grid-area: 17 / 10 / 19 / 11; }
+.bm15   { grid-area: 11 / 14 / 13 / 15; }
+
+.match{
+	
+	background-color: #cacaca;
+	box-shadow: 1px 1px 5px #9b9b9b;
+}
+.player{
+	
+	padding: 5px;
+}
+
+.match div:first-child{
+	border-bottom: solid 2px white;
+}
+
+.button-info{
+	/* border: solid 1px; */
+	border: 0;
+	color: #282828;
+	background-color: #9f9f9f;
+	font-size: 23px;
+	cursor: pointer;
+}
+  
+.button-info:hover{
+  background-color: #424242;
+  color: #e7e7e7;
+}
+
+.button-info:active{
+  background-color: black;
+}
+
+.navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #3c3b3b;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 5px black;
+
+}
+
+.navbar a{
+  padding: 7px 9px;
+  text-decoration: none;
+  color: white;
+  height: 100%;
+}
+.navbar a:hover{
+  color:  #3c3b3b;
+  background-color:white;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - */
+
+.player-list{
+      display: flex;
+      flex-direction: column;
+      width: 20%;
+      height: 100vh;
+      overflow-y: scroll;
+      position: fixed;
+      top: 33px;
+      left: 0;
+      background-color: #646464;
+    }
+
+    .draw-gap{
+      min-height: 26px;
+      padding: 0px 2px ;
+
+    }
+
+  .flag{
+      width: 20px;
+      height: 15px;
+      margin: 0 6px;
+    }
+  
+    .player{
+      display: flex;
+      padding: 7px;
+      background-color: #303030;
+      color: #efefef;
+      font-family: monospace;
+      font-size: 15px;
+      /*border-bottom: solid 2px #060606;*/
+    }
+
+/*  .player:hover{
+      background-color: #1e1e1e;
+    }*/
+
+ /*   .player:active{
+      cursor: grabbing;
+    }*/
+    .player-gap{
+      min-height: 35px;
+    }
+
+  .invisible{
+    display: none;
+    }
+
+        
+
+    .sortable-chosen{
+      background-color: green;
+    }
+    
+</style>
+
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#section1">Sección 1</a>
+  <a href="#section2">Sección 2</a>
+  <a href="#section3">Sección 3</a>
+  <a href="#section4">Sección 4</a>
+  <a href="#section5">Sección 5</a>
+  <a href="#section6">Sección 6</a>
+  <a href="#section7">Sección 7</a>
+  <a href="#section8">Sección 8</a>
+  <a href="#final">Final</a>
+</div>
+
+<div data-occupied="false" class="player-list draggable-item" >
+
+    <% players.forEach(player=>{ %>
+
+
+    
+      <div data-occupied="false" class="player">
+        <span data-occupied="false" class="player-ranking"><%=player.ranking%></span>.
+        <img src="<%=player.flag%>" class="flag"> 
+        <span data-occupied="false" class="player-name"><%=player.name%></span>
+      </div>
+    
+
+    <%});%>
+
+</div>
+
+<div class="main-container">
+
+  <hr id="section1">
+
+  <div class="section section1">
+
+    <h2>Sección 1</h2>
+
+    <div class="table-header">
+        <div class="t1">Primera ronda</div>
+        <div class="t2">Segunda ronda</div>
+        <div class="t3">Tercera ronda</div>
+        <div class="t4">Cuarta ronda</div>
+      </div>
+      
+    <div class="container">
+
+
+      <div class="match m1">
+      	<div data-occupied="false" class="player-gap m1p1" draggable="true"> </div>
+      	<div data-occupied="false" class="player-gap m1p2"> </div>
+      </div>
+
+      <div class="match m2">
+      	<div data-occupied="false" class="player-gap m2p1"> </div>
+      	<div data-occupied="false" class="player-gap m2p2"> </div>
+      </div>
+
+      <div class="match m3">
+      	<div data-occupied="false" class="player-gap m3p1"> </div>
+      	<div data-occupied="false" class="player-gap m3p2"> </div>
+      </div>
+      
+
+      <div class="match m4">
+      	<div data-occupied="false" class="player-gap m4p1"> </div>
+      	<div data-occupied="false" class="player-gap m4p2"> </div>
+      </div>
+
+      <div class="match m5">
+      	<div data-occupied="false" class="player-gap m5p1"> </div>
+      	<div data-occupied="false" class="player-gap m5p2"> </div>
+      </div>
+
+      <div class="match m6">
+      	<div data-occupied="false" class="player-gap m6p1"> </div>
+      	<div data-occupied="false" class="player-gap m6p2"> </div>
+      </div>
+
+      <div class="match m7">
+      	<div data-occupied="false" class="player-gap m7p1"> </div>
+      	<div data-occupied="false" class="player-gap m7p2"> </div>
+      </div>
+
+      <div class="match m8">
+      	<div data-occupied="false" class="player-gap m8p1"> </div>
+      	<div data-occupied="false" class="player-gap m8p2"> </div>
+      </div>
+
+      <div class="match m9">
+      	<div data-occupied="false" class="player-gap m9p1"> </div>
+      	<div data-occupied="false" class="player-gap m9p2"> </div>
+      </div>
+
+      <div class="match m10">
+      	<div data-occupied="false" class="player-gap m10p1"> </div>
+      	<div data-occupied="false" class="player-gap m10p2"> </div>
+      </div>
+
+      <div class="match m11">
+      	<div data-occupied="false" class="player-gap m11p1"> </div>
+      	<div data-occupied="false" class="player-gap m11p2"> </div>
+      </div>
+
+      <div class="match m12">
+      	<div data-occupied="false" class="player-gap m12p1"> </div>
+      	<div data-occupied="false" class="player-gap m12p2"> </div>
+      </div>
+
+      <div class="match m13">
+      	<div data-occupied="false" class="player-gap m13p1"> </div>
+      	<div data-occupied="false" class="player-gap m13p2"> </div>
+      </div>
+
+      <div class="match m14">
+      	<div data-occupied="false" class="player-gap m14p1"> </div>
+      	<div data-occupied="false" class="player-gap m14p2"> </div>
+      </div>
+
+      <div class="match m15">
+      	<div data-occupied="false" class="player-gap m15p1"> </div>
+      	<div data-occupied="false" class="player-gap m15p2"> </div>
+      </div>
+      
+
+      <div class="c1"></div>
+      <div class="c2"></div>
+      <div class="c3"></div>
+      <div class="c4"></div>
+      <div class="c5"></div>
+      <div class="c6"></div>
+      <div class="c7"></div>
+      <div class="c8"></div>
+      <div class="c9"></div>
+      <div class="c10"></div>
+      <div class="c11"></div>
+      <div class="c12"></div>
+      <div class="c13"></div>
+      <div class="c14"></div>
+      
+     
+
+      <button class="button-info bm1">+</button>
+      <button class="button-info bm2">+</button>
+      <button class="button-info bm3">+</button>
+      <button class="button-info bm4">+</button>
+      <button class="button-info bm5">+</button>
+      <button class="button-info bm6">+</button>
+      <button class="button-info bm7">+</button>
+      <button class="button-info bm8">+</button>
+      <button class="button-info bm9">+</button>
+      <button class="button-info bm10">+</button>
+      <button class="button-info bm11">+</button>
+      <button class="button-info bm12">+</button>
+      <button class="button-info bm13">+</button>
+      <button class="button-info bm14">+</button>
+      <button class="button-info bm15">+</button>
+    </div>
+  </div>
+
+  <hr id="section2">
+
+  <div class="section section2">
+
+    <h2>Sección 2</h2>
+
+    <div class="table-header">
+        <div class="t1">Primera ronda</div>
+        <div class="t2">Segunda ronda</div>
+        <div class="t3">Tercera ronda</div>
+        <div class="t4">Cuarta ronda</div>
+      </div>
+      
+    <div class="container">
+
+
+      <div class="match m1">
+        <div data-occupied="false" class="player-gap m1p1"> </div>
+        <div data-occupied="false" class="player-gap m1p2"> </div>
+      </div>
+
+      <div class="match m2">
+        <div data-occupied="false" class="player-gap m2p1"> </div>
+        <div data-occupied="false" class="player-gap m2p2"> </div>
+      </div>
+
+      <div class="match m3">
+        <div data-occupied="false" class="player-gap m3p1"> </div>
+        <div data-occupied="false" class="player-gap m3p2"> </div>
+      </div>
+      
+
+      <div class="match m4">
+        <div data-occupied="false" class="player-gap m4p1"> </div>
+        <div data-occupied="false" class="player-gap m4p2"> </div>
+      </div>
+
+      <div class="match m5">
+        <div data-occupied="false" class="player-gap m5p1"> </div>
+        <div data-occupied="false" class="player-gap m5p2"> </div>
+      </div>
+
+      <div class="match m6">
+        <div data-occupied="false" class="player-gap m6p1"> </div>
+        <div data-occupied="false" class="player-gap m6p2"> </div>
+      </div>
+
+      <div class="match m7">
+        <div data-occupied="false" class="player-gap m7p1"> </div>
+        <div data-occupied="false" class="player-gap m7p2"> </div>
+      </div>
+
+      <div class="match m8">
+        <div data-occupied="false" class="player-gap m8p1"> </div>
+        <div data-occupied="false" class="player-gap m8p2"> </div>
+      </div>
+
+      <div class="match m9">
+        <div data-occupied="false" class="player-gap m9p1"> </div>
+        <div data-occupied="false" class="player-gap m9p2"> </div>
+      </div>
+
+      <div class="match m10">
+        <div data-occupied="false" class="player-gap m10p1"> </div>
+        <div data-occupied="false" class="player-gap m10p2"> </div>
+      </div>
+
+      <div class="match m11">
+        <div data-occupied="false" class="player-gap m11p1"> </div>
+        <div data-occupied="false" class="player-gap m11p2"> </div>
+      </div>
+
+      <div class="match m12">
+        <div data-occupied="false" class="player-gap m12p1"> </div>
+        <div data-occupied="false" class="player-gap m12p2"> </div>
+      </div>
+
+      <div class="match m13">
+        <div data-occupied="false" class="player-gap m13p1"> </div>
+        <div data-occupied="false" class="player-gap m13p2"> </div>
+      </div>
+
+      <div class="match m14">
+        <div data-occupied="false" class="player-gap m14p1"> </div>
+        <div data-occupied="false" class="player-gap m14p2"> </div>
+      </div>
+
+      <div class="match m15">
+        <div data-occupied="false" class="player-gap m15p1"> </div>
+        <div data-occupied="false" class="player-gap m15p2"> </div>
+      </div>
+      
+
+      <div class="c1"></div>
+      <div class="c2"></div>
+      <div class="c3"></div>
+      <div class="c4"></div>
+      <div class="c5"></div>
+      <div class="c6"></div>
+      <div class="c7"></div>
+      <div class="c8"></div>
+      <div class="c9"></div>
+      <div class="c10"></div>
+      <div class="c11"></div>
+      <div class="c12"></div>
+      <div class="c13"></div>
+      <div class="c14"></div>
+      
+     
+
+      <button class="button-info bm1">+</button>
+      <button class="button-info bm2">+</button>
+      <button class="button-info bm3">+</button>
+      <button class="button-info bm4">+</button>
+      <button class="button-info bm5">+</button>
+      <button class="button-info bm6">+</button>
+      <button class="button-info bm7">+</button>
+      <button class="button-info bm8">+</button>
+      <button class="button-info bm9">+</button>
+      <button class="button-info bm10">+</button>
+      <button class="button-info bm11">+</button>
+      <button class="button-info bm12">+</button>
+      <button class="button-info bm13">+</button>
+      <button class="button-info bm14">+</button>
+      <button class="button-info bm15">+</button>
+    </div>
+  </div>
+
+  <hr id="section3">
+
+  <div class="section section3">
+
+    <h2>Sección 3</h2>
+
+    <div class="table-header">
+        <div class="t1">Primera ronda</div>
+        <div class="t2">Segunda ronda</div>
+        <div class="t3">Tercera ronda</div>
+        <div class="t4">Cuarta ronda</div>
+      </div>
+      
+    <div class="container">
+
+
+      <div class="match m1">
+        <div data-occupied="false" class="player-gap m1p1"> </div>
+        <div data-occupied="false" class="player-gap m1p2"> </div>
+      </div>
+
+      <div class="match m2">
+        <div data-occupied="false" class="player-gap m2p1"> </div>
+        <div data-occupied="false" class="player-gap m2p2"> </div>
+      </div>
+
+      <div class="match m3">
+        <div data-occupied="false" class="player-gap m3p1"> </div>
+        <div data-occupied="false" class="player-gap m3p2"> </div>
+      </div>
+      
+
+      <div class="match m4">
+        <div data-occupied="false" class="player-gap m4p1"> </div>
+        <div data-occupied="false" class="player-gap m4p2"> </div>
+      </div>
+
+      <div class="match m5">
+        <div data-occupied="false" class="player-gap m5p1"> </div>
+        <div data-occupied="false" class="player-gap m5p2"> </div>
+      </div>
+
+      <div class="match m6">
+        <div data-occupied="false" class="player-gap m6p1"> </div>
+        <div data-occupied="false" class="player-gap m6p2"> </div>
+      </div>
+
+      <div class="match m7">
+        <div data-occupied="false" class="player-gap m7p1"> </div>
+        <div data-occupied="false" class="player-gap m7p2"> </div>
+      </div>
+
+      <div class="match m8">
+        <div data-occupied="false" class="player-gap m8p1"> </div>
+        <div data-occupied="false" class="player-gap m8p2"> </div>
+      </div>
+
+      <div class="match m9">
+        <div data-occupied="false" class="player-gap m9p1"> </div>
+        <div data-occupied="false" class="player-gap m9p2"> </div>
+      </div>
+
+      <div class="match m10">
+        <div data-occupied="false" class="player-gap m10p1"> </div>
+        <div data-occupied="false" class="player-gap m10p2"> </div>
+      </div>
+
+      <div class="match m11">
+        <div data-occupied="false" class="player-gap m11p1"> </div>
+        <div data-occupied="false" class="player-gap m11p2"> </div>
+      </div>
+
+      <div class="match m12">
+        <div data-occupied="false" class="player-gap m12p1"> </div>
+        <div data-occupied="false" class="player-gap m12p2"> </div>
+      </div>
+
+      <div class="match m13">
+        <div data-occupied="false" class="player-gap m13p1"> </div>
+        <div data-occupied="false" class="player-gap m13p2"> </div>
+      </div>
+
+      <div class="match m14">
+        <div data-occupied="false" class="player-gap m14p1"> </div>
+        <div data-occupied="false" class="player-gap m14p2"> </div>
+      </div>
+
+      <div class="match m15">
+        <div data-occupied="false" class="player-gap m15p1"> </div>
+        <div data-occupied="false" class="player-gap m15p2"> </div>
+      </div>
+      
+
+      <div class="c1"></div>
+      <div class="c2"></div>
+      <div class="c3"></div>
+      <div class="c4"></div>
+      <div class="c5"></div>
+      <div class="c6"></div>
+      <div class="c7"></div>
+      <div class="c8"></div>
+      <div class="c9"></div>
+      <div class="c10"></div>
+      <div class="c11"></div>
+      <div class="c12"></div>
+      <div class="c13"></div>
+      <div class="c14"></div>
+      
+     
+
+      <button class="button-info bm1">+</button>
+      <button class="button-info bm2">+</button>
+      <button class="button-info bm3">+</button>
+      <button class="button-info bm4">+</button>
+      <button class="button-info bm5">+</button>
+      <button class="button-info bm6">+</button>
+      <button class="button-info bm7">+</button>
+      <button class="button-info bm8">+</button>
+      <button class="button-info bm9">+</button>
+      <button class="button-info bm10">+</button>
+      <button class="button-info bm11">+</button>
+      <button class="button-info bm12">+</button>
+      <button class="button-info bm13">+</button>
+      <button class="button-info bm14">+</button>
+      <button class="button-info bm15">+</button>
+    </div>
+  </div>
+
+  <hr id="section4">
+
+  <div class="section section4">
+
+    <h2>Sección 4</h2>
+
+    <div class="table-header">
+        <div class="t1">Primera ronda</div>
+        <div class="t2">Segunda ronda</div>
+        <div class="t3">Tercera ronda</div>
+        <div class="t4">Cuarta ronda</div>
+      </div>
+      
+    <div class="container">
+
+
+      <div class="match m1">
+        <div data-occupied="false" class="player-gap m1p1"> </div>
+        <div data-occupied="false" class="player-gap m1p2"> </div>
+      </div>
+
+      <div class="match m2">
+        <div data-occupied="false" class="player-gap m2p1"> </div>
+        <div data-occupied="false" class="player-gap m2p2"> </div>
+      </div>
+
+      <div class="match m3">
+        <div data-occupied="false" class="player-gap m3p1"> </div>
+        <div data-occupied="false" class="player-gap m3p2"> </div>
+      </div>
+      
+
+      <div class="match m4">
+        <div data-occupied="false" class="player-gap m4p1"> </div>
+        <div data-occupied="false" class="player-gap m4p2"> </div>
+      </div>
+
+      <div class="match m5">
+        <div data-occupied="false" class="player-gap m5p1"> </div>
+        <div data-occupied="false" class="player-gap m5p2"> </div>
+      </div>
+
+      <div class="match m6">
+        <div data-occupied="false" class="player-gap m6p1"> </div>
+        <div data-occupied="false" class="player-gap m6p2"> </div>
+      </div>
+
+      <div class="match m7">
+        <div data-occupied="false" class="player-gap m7p1"> </div>
+        <div data-occupied="false" class="player-gap m7p2"> </div>
+      </div>
+
+      <div class="match m8">
+        <div data-occupied="false" class="player-gap m8p1"> </div>
+        <div data-occupied="false" class="player-gap m8p2"> </div>
+      </div>
+
+      <div class="match m9">
+        <div data-occupied="false" class="player-gap m9p1"> </div>
+        <div data-occupied="false" class="player-gap m9p2"> </div>
+      </div>
+
+      <div class="match m10">
+        <div data-occupied="false" class="player-gap m10p1"> </div>
+        <div data-occupied="false" class="player-gap m10p2"> </div>
+      </div>
+
+      <div class="match m11">
+        <div data-occupied="false" class="player-gap m11p1"> </div>
+        <div data-occupied="false" class="player-gap m11p2"> </div>
+      </div>
+
+      <div class="match m12">
+        <div data-occupied="false" class="player-gap m12p1"> </div>
+        <div data-occupied="false" class="player-gap m12p2"> </div>
+      </div>
+
+      <div class="match m13">
+        <div data-occupied="false" class="player-gap m13p1"> </div>
+        <div data-occupied="false" class="player-gap m13p2"> </div>
+      </div>
+
+      <div class="match m14">
+        <div data-occupied="false" class="player-gap m14p1"> </div>
+        <div data-occupied="false" class="player-gap m14p2"> </div>
+      </div>
+
+      <div class="match m15">
+        <div data-occupied="false" class="player-gap m15p1"> </div>
+        <div data-occupied="false" class="player-gap m15p2"> </div>
+      </div>
+      
+
+      <div class="c1"></div>
+      <div class="c2"></div>
+      <div class="c3"></div>
+      <div class="c4"></div>
+      <div class="c5"></div>
+      <div class="c6"></div>
+      <div class="c7"></div>
+      <div class="c8"></div>
+      <div class="c9"></div>
+      <div class="c10"></div>
+      <div class="c11"></div>
+      <div class="c12"></div>
+      <div class="c13"></div>
+      <div class="c14"></div>
+      
+     
+
+      <button class="button-info bm1">+</button>
+      <button class="button-info bm2">+</button>
+      <button class="button-info bm3">+</button>
+      <button class="button-info bm4">+</button>
+      <button class="button-info bm5">+</button>
+      <button class="button-info bm6">+</button>
+      <button class="button-info bm7">+</button>
+      <button class="button-info bm8">+</button>
+      <button class="button-info bm9">+</button>
+      <button class="button-info bm10">+</button>
+      <button class="button-info bm11">+</button>
+      <button class="button-info bm12">+</button>
+      <button class="button-info bm13">+</button>
+      <button class="button-info bm14">+</button>
+      <button class="button-info bm15">+</button>
+    </div>
+  </div>
+
+  <hr id="section5">
+
+  <div class="section section5">
+
+    <h2>Sección 5</h2>
+
+    <div class="table-header">
+        <div class="t1">Primera ronda</div>
+        <div class="t2">Segunda ronda</div>
+        <div class="t3">Tercera ronda</div>
+        <div class="t4">Cuarta ronda</div>
+      </div>
+      
+    <div class="container">
+
+
+      <div class="match m1">
+        <div data-occupied="false" class="player-gap m1p1"> </div>
+        <div data-occupied="false" class="player-gap m1p2"> </div>
+      </div>
+
+      <div class="match m2">
+        <div data-occupied="false" class="player-gap m2p1"> </div>
+        <div data-occupied="false" class="player-gap m2p2"> </div>
+      </div>
+
+      <div class="match m3">
+        <div data-occupied="false" class="player-gap m3p1"> </div>
+        <div data-occupied="false" class="player-gap m3p2"> </div>
+      </div>
+      
+
+      <div class="match m4">
+        <div data-occupied="false" class="player-gap m4p1"> </div>
+        <div data-occupied="false" class="player-gap m4p2"> </div>
+      </div>
+
+      <div class="match m5">
+        <div data-occupied="false" class="player-gap m5p1"> </div>
+        <div data-occupied="false" class="player-gap m5p2"> </div>
+      </div>
+
+      <div class="match m6">
+        <div data-occupied="false" class="player-gap m6p1"> </div>
+        <div data-occupied="false" class="player-gap m6p2"> </div>
+      </div>
+
+      <div class="match m7">
+        <div data-occupied="false" class="player-gap m7p1"> </div>
+        <div data-occupied="false" class="player-gap m7p2"> </div>
+      </div>
+
+      <div class="match m8">
+        <div data-occupied="false" class="player-gap m8p1"> </div>
+        <div data-occupied="false" class="player-gap m8p2"> </div>
+      </div>
+
+      <div class="match m9">
+        <div data-occupied="false" class="player-gap m9p1"> </div>
+        <div data-occupied="false" class="player-gap m9p2"> </div>
+      </div>
+
+      <div class="match m10">
+        <div data-occupied="false" class="player-gap m10p1"> </div>
+        <div data-occupied="false" class="player-gap m10p2"> </div>
+      </div>
+
+      <div class="match m11">
+        <div data-occupied="false" class="player-gap m11p1"> </div>
+        <div data-occupied="false" class="player-gap m11p2"> </div>
+      </div>
+
+      <div class="match m12">
+        <div data-occupied="false" class="player-gap m12p1"> </div>
+        <div data-occupied="false" class="player-gap m12p2"> </div>
+      </div>
+
+      <div class="match m13">
+        <div data-occupied="false" class="player-gap m13p1"> </div>
+        <div data-occupied="false" class="player-gap m13p2"> </div>
+      </div>
+
+      <div class="match m14">
+        <div data-occupied="false" class="player-gap m14p1"> </div>
+        <div data-occupied="false" class="player-gap m14p2"> </div>
+      </div>
+
+      <div class="match m15">
+        <div data-occupied="false" class="player-gap m15p1"> </div>
+        <div data-occupied="false" class="player-gap m15p2"> </div>
+      </div>
+      
+
+      <div class="c1"></div>
+      <div class="c2"></div>
+      <div class="c3"></div>
+      <div class="c4"></div>
+      <div class="c5"></div>
+      <div class="c6"></div>
+      <div class="c7"></div>
+      <div class="c8"></div>
+      <div class="c9"></div>
+      <div class="c10"></div>
+      <div class="c11"></div>
+      <div class="c12"></div>
+      <div class="c13"></div>
+      <div class="c14"></div>
+      
+     
+
+      <button class="button-info bm1">+</button>
+      <button class="button-info bm2">+</button>
+      <button class="button-info bm3">+</button>
+      <button class="button-info bm4">+</button>
+      <button class="button-info bm5">+</button>
+      <button class="button-info bm6">+</button>
+      <button class="button-info bm7">+</button>
+      <button class="button-info bm8">+</button>
+      <button class="button-info bm9">+</button>
+      <button class="button-info bm10">+</button>
+      <button class="button-info bm11">+</button>
+      <button class="button-info bm12">+</button>
+      <button class="button-info bm13">+</button>
+      <button class="button-info bm14">+</button>
+      <button class="button-info bm15">+</button>
+    </div>
+  </div>
+
+  <hr id="section6">
+
+  <div class="section section6">
+
+    <h2>Sección 6</h2>
+
+    <div class="table-header">
+        <div class="t1">Primera ronda</div>
+        <div class="t2">Segunda ronda</div>
+        <div class="t3">Tercera ronda</div>
+        <div class="t4">Cuarta ronda</div>
+      </div>
+      
+    <div class="container">
+
+
+      <div class="match m1">
+        <div data-occupied="false" class="player-gap m1p1"> </div>
+        <div data-occupied="false" class="player-gap m1p2"> </div>
+      </div>
+
+      <div class="match m2">
+        <div data-occupied="false" class="player-gap m2p1"> </div>
+        <div data-occupied="false" class="player-gap m2p2"> </div>
+      </div>
+
+      <div class="match m3">
+        <div data-occupied="false" class="player-gap m3p1"> </div>
+        <div data-occupied="false" class="player-gap m3p2"> </div>
+      </div>
+      
+
+      <div class="match m4">
+        <div data-occupied="false" class="player-gap m4p1"> </div>
+        <div data-occupied="false" class="player-gap m4p2"> </div>
+      </div>
+
+      <div class="match m5">
+        <div data-occupied="false" class="player-gap m5p1"> </div>
+        <div data-occupied="false" class="player-gap m5p2"> </div>
+      </div>
+
+      <div class="match m6">
+        <div data-occupied="false" class="player-gap m6p1"> </div>
+        <div data-occupied="false" class="player-gap m6p2"> </div>
+      </div>
+
+      <div class="match m7">
+        <div data-occupied="false" class="player-gap m7p1"> </div>
+        <div data-occupied="false" class="player-gap m7p2"> </div>
+      </div>
+
+      <div class="match m8">
+        <div data-occupied="false" class="player-gap m8p1"> </div>
+        <div data-occupied="false" class="player-gap m8p2"> </div>
+      </div>
+
+      <div class="match m9">
+        <div data-occupied="false" class="player-gap m9p1"> </div>
+        <div data-occupied="false" class="player-gap m9p2"> </div>
+      </div>
+
+      <div class="match m10">
+        <div data-occupied="false" class="player-gap m10p1"> </div>
+        <div data-occupied="false" class="player-gap m10p2"> </div>
+      </div>
+
+      <div class="match m11">
+        <div data-occupied="false" class="player-gap m11p1"> </div>
+        <div data-occupied="false" class="player-gap m11p2"> </div>
+      </div>
+
+      <div class="match m12">
+        <div data-occupied="false" class="player-gap m12p1"> </div>
+        <div data-occupied="false" class="player-gap m12p2"> </div>
+      </div>
+
+      <div class="match m13">
+        <div data-occupied="false" class="player-gap m13p1"> </div>
+        <div data-occupied="false" class="player-gap m13p2"> </div>
+      </div>
+
+      <div class="match m14">
+        <div data-occupied="false" class="player-gap m14p1"> </div>
+        <div data-occupied="false" class="player-gap m14p2"> </div>
+      </div>
+
+      <div class="match m15">
+        <div data-occupied="false" class="player-gap m15p1"> </div>
+        <div data-occupied="false" class="player-gap m15p2"> </div>
+      </div>
+      
+
+      <div class="c1"></div>
+      <div class="c2"></div>
+      <div class="c3"></div>
+      <div class="c4"></div>
+      <div class="c5"></div>
+      <div class="c6"></div>
+      <div class="c7"></div>
+      <div class="c8"></div>
+      <div class="c9"></div>
+      <div class="c10"></div>
+      <div class="c11"></div>
+      <div class="c12"></div>
+      <div class="c13"></div>
+      <div class="c14"></div>
+      
+     
+
+      <button class="button-info bm1">+</button>
+      <button class="button-info bm2">+</button>
+      <button class="button-info bm3">+</button>
+      <button class="button-info bm4">+</button>
+      <button class="button-info bm5">+</button>
+      <button class="button-info bm6">+</button>
+      <button class="button-info bm7">+</button>
+      <button class="button-info bm8">+</button>
+      <button class="button-info bm9">+</button>
+      <button class="button-info bm10">+</button>
+      <button class="button-info bm11">+</button>
+      <button class="button-info bm12">+</button>
+      <button class="button-info bm13">+</button>
+      <button class="button-info bm14">+</button>
+      <button class="button-info bm15">+</button>
+    </div>
+  </div>
+
+  <hr id="section7">
+
+  <div class="section section7">
+
+    <h2>Sección 7</h2>
+
+    <div class="table-header">
+        <div class="t1">Primera ronda</div>
+        <div class="t2">Segunda ronda</div>
+        <div class="t3">Tercera ronda</div>
+        <div class="t4">Cuarta ronda</div>
+      </div>
+      
+    <div class="container">
+
+
+      <div class="match m1">
+        <div data-occupied="false" class="player-gap m1p1"> </div>
+        <div data-occupied="false" class="player-gap m1p2"> </div>
+      </div>
+
+      <div class="match m2">
+        <div data-occupied="false" class="player-gap m2p1"> </div>
+        <div data-occupied="false" class="player-gap m2p2"> </div>
+      </div>
+
+      <div class="match m3">
+        <div data-occupied="false" class="player-gap m3p1"> </div>
+        <div data-occupied="false" class="player-gap m3p2"> </div>
+      </div>
+      
+
+      <div class="match m4">
+        <div data-occupied="false" class="player-gap m4p1"> </div>
+        <div data-occupied="false" class="player-gap m4p2"> </div>
+      </div>
+
+      <div class="match m5">
+        <div data-occupied="false" class="player-gap m5p1"> </div>
+        <div data-occupied="false" class="player-gap m5p2"> </div>
+      </div>
+
+      <div class="match m6">
+        <div data-occupied="false" class="player-gap m6p1"> </div>
+        <div data-occupied="false" class="player-gap m6p2"> </div>
+      </div>
+
+      <div class="match m7">
+        <div data-occupied="false" class="player-gap m7p1"> </div>
+        <div data-occupied="false" class="player-gap m7p2"> </div>
+      </div>
+
+      <div class="match m8">
+        <div data-occupied="false" class="player-gap m8p1"> </div>
+        <div data-occupied="false" class="player-gap m8p2"> </div>
+      </div>
+
+      <div class="match m9">
+        <div data-occupied="false" class="player-gap m9p1"> </div>
+        <div data-occupied="false" class="player-gap m9p2"> </div>
+      </div>
+
+      <div class="match m10">
+        <div data-occupied="false" class="player-gap m10p1"> </div>
+        <div data-occupied="false" class="player-gap m10p2"> </div>
+      </div>
+
+      <div class="match m11">
+        <div data-occupied="false" class="player-gap m11p1"> </div>
+        <div data-occupied="false" class="player-gap m11p2"> </div>
+      </div>
+
+      <div class="match m12">
+        <div data-occupied="false" class="player-gap m12p1"> </div>
+        <div data-occupied="false" class="player-gap m12p2"> </div>
+      </div>
+
+      <div class="match m13">
+        <div data-occupied="false" class="player-gap m13p1"> </div>
+        <div data-occupied="false" class="player-gap m13p2"> </div>
+      </div>
+
+      <div class="match m14">
+        <div data-occupied="false" class="player-gap m14p1"> </div>
+        <div data-occupied="false" class="player-gap m14p2"> </div>
+      </div>
+
+      <div class="match m15">
+        <div data-occupied="false" class="player-gap m15p1"> </div>
+        <div data-occupied="false" class="player-gap m15p2"> </div>
+      </div>
+      
+
+      <div class="c1"></div>
+      <div class="c2"></div>
+      <div class="c3"></div>
+      <div class="c4"></div>
+      <div class="c5"></div>
+      <div class="c6"></div>
+      <div class="c7"></div>
+      <div class="c8"></div>
+      <div class="c9"></div>
+      <div class="c10"></div>
+      <div class="c11"></div>
+      <div class="c12"></div>
+      <div class="c13"></div>
+      <div class="c14"></div>
+      
+     
+
+      <button class="button-info bm1">+</button>
+      <button class="button-info bm2">+</button>
+      <button class="button-info bm3">+</button>
+      <button class="button-info bm4">+</button>
+      <button class="button-info bm5">+</button>
+      <button class="button-info bm6">+</button>
+      <button class="button-info bm7">+</button>
+      <button class="button-info bm8">+</button>
+      <button class="button-info bm9">+</button>
+      <button class="button-info bm10">+</button>
+      <button class="button-info bm11">+</button>
+      <button class="button-info bm12">+</button>
+      <button class="button-info bm13">+</button>
+      <button class="button-info bm14">+</button>
+      <button class="button-info bm15">+</button>
+    </div>
+  </div>
+
+  <hr id="section8">
+
+  <div class="section section8">
+
+    <h2>Sección 8</h2>
+
+    <div class="table-header">
+        <div class="t1">Primera ronda</div>
+        <div class="t2">Segunda ronda</div>
+        <div class="t3">Tercera ronda</div>
+        <div class="t4">Cuarta ronda</div>
+      </div>
+      
+    <div class="container">
+
+
+      <div class="match m1">
+        <div data-occupied="false" class="player-gap m1p1"> </div>
+        <div data-occupied="false" class="player-gap m1p2"> </div>
+      </div>
+
+      <div class="match m2">
+        <div data-occupied="false" class="player-gap m2p1"> </div>
+        <div data-occupied="false" class="player-gap m2p2"> </div>
+      </div>
+
+      <div class="match m3">
+        <div data-occupied="false" class="player-gap m3p1"> </div>
+        <div data-occupied="false" class="player-gap m3p2"> </div>
+      </div>
+      
+
+      <div class="match m4">
+        <div data-occupied="false" class="player-gap m4p1"> </div>
+        <div data-occupied="false" class="player-gap m4p2"> </div>
+      </div>
+
+      <div class="match m5">
+        <div data-occupied="false" class="player-gap m5p1"> </div>
+        <div data-occupied="false" class="player-gap m5p2"> </div>
+      </div>
+
+      <div class="match m6">
+        <div data-occupied="false" class="player-gap m6p1"> </div>
+        <div data-occupied="false" class="player-gap m6p2"> </div>
+      </div>
+
+      <div class="match m7">
+        <div data-occupied="false" class="player-gap m7p1"> </div>
+        <div data-occupied="false" class="player-gap m7p2"> </div>
+      </div>
+
+      <div class="match m8">
+        <div data-occupied="false" class="player-gap m8p1"> </div>
+        <div data-occupied="false" class="player-gap m8p2"> </div>
+      </div>
+
+      <div class="match m9">
+        <div data-occupied="false" class="player-gap m9p1"> </div>
+        <div data-occupied="false" class="player-gap m9p2"> </div>
+      </div>
+
+      <div class="match m10">
+        <div data-occupied="false" class="player-gap m10p1"> </div>
+        <div data-occupied="false" class="player-gap m10p2"> </div>
+      </div>
+
+      <div class="match m11">
+        <div data-occupied="false" class="player-gap m11p1"> </div>
+        <div data-occupied="false" class="player-gap m11p2"> </div>
+      </div>
+
+      <div class="match m12">
+        <div data-occupied="false" class="player-gap m12p1"> </div>
+        <div data-occupied="false" class="player-gap m12p2"> </div>
+      </div>
+
+      <div class="match m13">
+        <div data-occupied="false" class="player-gap m13p1"> </div>
+        <div data-occupied="false" class="player-gap m13p2"> </div>
+      </div>
+
+      <div class="match m14">
+        <div data-occupied="false" class="player-gap m14p1"> </div>
+        <div data-occupied="false" class="player-gap m14p2"> </div>
+      </div>
+
+      <div class="match m15">
+        <div data-occupied="false" class="player-gap m15p1"> </div>
+        <div data-occupied="false" class="player-gap m15p2"> </div>
+      </div>
+      
+
+      <div class="c1"></div>
+      <div class="c2"></div>
+      <div class="c3"></div>
+      <div class="c4"></div>
+      <div class="c5"></div>
+      <div class="c6"></div>
+      <div class="c7"></div>
+      <div class="c8"></div>
+      <div class="c9"></div>
+      <div class="c10"></div>
+      <div class="c11"></div>
+      <div class="c12"></div>
+      <div class="c13"></div>
+      <div class="c14"></div>
+      
+     
+
+      <button class="button-info bm1">+</button>
+      <button class="button-info bm2">+</button>
+      <button class="button-info bm3">+</button>
+      <button class="button-info bm4">+</button>
+      <button class="button-info bm5">+</button>
+      <button class="button-info bm6">+</button>
+      <button class="button-info bm7">+</button>
+      <button class="button-info bm8">+</button>
+      <button class="button-info bm9">+</button>
+      <button class="button-info bm10">+</button>
+      <button class="button-info bm11">+</button>
+      <button class="button-info bm12">+</button>
+      <button class="button-info bm13">+</button>
+      <button class="button-info bm14">+</button>
+      <button class="button-info bm15">+</button>
+    </div>
+  </div>
+
+  <hr id="final">
+
+
+
+</div>
+
+
+<script src="./script.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+</body>
+</html>
