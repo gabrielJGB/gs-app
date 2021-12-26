@@ -86,6 +86,8 @@ app.get('/test',(req,res)=>{
 })
 
 
+//test
+
 // app.get('/',(req,res)=>{
 //   res.render('players',{players})
 // })
