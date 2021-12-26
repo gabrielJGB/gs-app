@@ -232,7 +232,15 @@ grid-area: 1/7/2/7;
       width: 20px;
       height: 15px;
       margin: 0 6px;
+      pointer-events: none
     }
+    .player-ranking{
+      pointer-events: none
+    }
+    .player-name
+  {
+    pointer-events: none
+  }
   
     .player{
       display: flex;
@@ -241,11 +249,14 @@ grid-area: 1/7/2/7;
       color: #efefef;
       font-family: monospace;
       font-size: 15px;
-
+      cursor: move;
       
       /*border-bottom: solid 2px #060606;*/
     }
 
+    .player:active{
+      background-color: #161616
+    }
 
     .player-list .player{
       border-bottom: solid 1px #646464;
@@ -271,6 +282,7 @@ grid-area: 1/7/2/7;
     .sortable-chosen{
       background-color: green;
     }
+
     
 </style>
 

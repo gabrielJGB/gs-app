@@ -18,14 +18,18 @@
 */
 
 let players = document.querySelectorAll('.player');
+let playerList = document.querySelector('.player-list');
 
 players.forEach(player=>{
-  player.addEventListener('dragover',dragOver)
-  player.addEventListener('dragleave',dragLeave)
-  player.addEventListener('drop',dragDrop)
+  player.addEventListener('dragover',dragOver);
+  player.addEventListener('dragenter',dragOver);
+  player.addEventListener('dragleave',dragLeave);
+  player.addEventListener('dragstart',dragStart); 
+  player.addEventListener('drop',dragDrop);
 })
 
-let playersArray = Array.from(players)
+let playersArray = Array.from(players);
+
 
 playersArray.forEach(player=>{
   player.addEventListener('click',f)
@@ -33,23 +37,39 @@ playersArray.forEach(player=>{
 
 function f(){
   let i = playersArray.indexOf(this);
-  playersArray[i]
+  console.log(playersArray[i])
 }
 
-function dragOver(){
-  
-  this.style['background-color'] = "#009345"
+let playerAux,endIndex,startIndex;
+
+function dragStart(e){
+  playerAux = this;
+  startIndex = playersArray.indexOf(this);
 }
 
-function dragLeave(){
-  setTimeout(()=>{
-    this.style['background-color'] = ""
-  },5)
+
+function dragOver(e){
+  e.preventDefault();
+  this.style['background-color'] = "#009345";
+}
+
+function dragLeave(e){
+  e.preventDefault();
+    setTimeout(()=>{
+      this.style['background-color'] = "";
+    },20)
 }
 
 function dragDrop(e){
-
   e.preventDefault();
-  console.log(e)
+  this.style['background-color'] = "";
+  endIndex = playersArray.indexOf(this);
 
+  playersArray.splice(startIndex,1,this)
+  playersArray.splice(endIndex,1,playerAux)
+  playerList.innerHTML = '';
+
+  for(let i=0;i<playersArray.length;i++){
+    playerList.append(playersArray[i])
+  }
 }
