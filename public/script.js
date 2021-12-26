@@ -25,8 +25,10 @@ players.forEach(player=>{
   player.addEventListener('dragenter',dragOver);
   player.addEventListener('dragleave',dragLeave);
   player.addEventListener('dragstart',dragStart); 
-  player.addEventListener('drop',dragDrop);
+  player.addEventListener('drop',dragDropMenu);
 })
+
+
 
 let playersArray = Array.from(players);
 
@@ -60,7 +62,7 @@ function dragLeave(e){
     },20)
 }
 
-function dragDrop(e){
+function dragDropMenu(e){
   e.preventDefault();
   this.style['background-color'] = "";
   endIndex = playersArray.indexOf(this);
@@ -73,3 +75,34 @@ function dragDrop(e){
     playerList.append(playersArray[i])
   }
 }
+
+/*
+
+pregunta: para poder soltar un elemento en un div, el mismo tiene que tener draggable=true ?
+
+SOLTAR ELEMENTOS EN EL CUADRO:
+
+si arrastro el player sobre un gap: cambiar color del fondo del gap
+
+si suelto en ese gap: 
+  -append el jugador el gap
+  -elimino el jugador del array y renderizo denuevo la lista. va a estar sin ese player 
+
+si lo suelto en cualquier lado no pasa nada (vuelve a la lista)
+
+-------
+
+si arrastro (drag over)un player sobre otro player Y el origen (drop start?) es un player que estaba en un gap (esto en la funcion dragover que ya esta (me fijo si la clase del this contiene draw gap)) entonces: 
+
+  -array.splice(posicion en que se solto,0 [porque no hay que borrar], player arrastrado)  .Se va a agregar debajo del jugador en el que fue dropeado (Ver si durante drop over poner el border bottom rojo por ej)
+
+  -renderizo de de nuevo la lista
+
+*/
+
+let playerGaps = document.querySelectorAll('.player-gap')
+
+playerGaps.forEach(gap=>{
+  gap.addEventListener('dragover',dragOverGap);
+})
+
