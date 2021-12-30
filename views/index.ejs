@@ -295,7 +295,115 @@ grid-area: 1/7/2/7;
       background-color: green;
     }
 
+
+    .modal-score{
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    .score{
+      display: flex;
+      flex-direction: column;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 30%;
+    }
+    .score-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 32px 15px;
+      gap: 20px;
     
+    }
+    .score-buttons{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 15px;
+    }
+    .score-buttons button{
+      width: 100%;
+      border: 0;
+      padding: 8px 0;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+  
+    .player-option{
+      display: flex;
+    /* flex-direction: row; */
+    /* align-content: center; */
+    /* vertical-align: middle; */
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .player-option:hover{
+      transition: all 0.2s;
+      background-color: #ededed;
+      box-shadow: 0 0 5px #959595;
+
+    }
+
+    .flag-option{
+      margin: 0 5px;
+      color: blue;
+    }
+
+
+    .flag-option img{
+      height: 20px;
+      width: 35px;
+    }
+
+    .player-option label{
+      cursor: pointer;
+    }
+
+    .name{
+      margin-top: 10px;
+    }
+
+    .accept-button{
+      background-color: #0048ab;
+      color: white;
+    }
+
+    .accept-button:hover{
+      background-color:#0d64dd;
+    }
+
+    .cancel-button{
+      background-color: black;
+      color: white;
+    }
+
+    .cancel-button:hover{
+      background-color: #1e1e1e;
+      
+    }
+
+    .checked{
+      border: solid 5px #03bf00;
+    }
+    .unchecked{
+      border: solid 5px transparent;
+    }
+
+
+
 </style>
 
 </head>
@@ -1360,6 +1468,40 @@ grid-area: 1/7/2/7;
 
 </div>
 
+
+<div class="modal-score">
+
+  <div class="score">
+    <h3>Ganador</h3>
+
+    <div class="score-container">
+      
+      <div class="player-option">
+
+        <input type="radio" id="player1" name="radio1">
+        <div class="flag-option"></div>
+        <label class="player-label" for="player1"></label>
+        
+      </div>
+
+      <div class="player-option">
+
+        <input type="radio" id="player2" name="radio1">
+        <div class="flag-option"></div>
+        <label class="player-label" for="player2"></label>
+
+      </div>
+
+    </div>
+
+    <div class="score-buttons">
+      <button class="accept-button" type="button">Aceptar</button>
+      <button class="cancel-button" type="button">Cancelar</button>
+    </div>
+
+  </div>
+
+</div>
 
 <script src="./script.js" type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>

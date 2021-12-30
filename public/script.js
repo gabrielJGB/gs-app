@@ -1,107 +1,133 @@
-let players = document.querySelectorAll('.player');
-let playerCells = document.querySelectorAll('.player-cell');
-let playerList = document.querySelector('.player-list');
-let playersArray = Array.from(players);
-let playerAux,endIndex,startIndex,dragOrigin,dragAllowed;
+import {} from './ui.js';
 
-players.forEach(player=>{
-  player.addEventListener('dragover',dragOver);
-  player.addEventListener('dragenter',dragOver);
-  player.addEventListener('dragleave',dragLeave);
-  player.addEventListener('dragstart',dragStart); 
-  player.addEventListener('drop',dragDrop);
+const buttons = document.querySelectorAll('.button-info');
+const modalWindow = document.querySelector('.modal-score');
+const acceptButton = document.querySelector('.accept-button');
+const cancelButton = document.querySelector('.cancel-button');
+let matchId,matchDiv,section;
+
+
+buttons.forEach(button=>{
+	button.addEventListener('click',getMatchData);
 });
 
-playerCells.forEach(cell=>{
-  cell.addEventListener('dragover',dragOver);
-  cell.addEventListener('dragenter',dragOver);
-  cell.addEventListener('dragleave',dragLeave);
-  cell.addEventListener('drop',dropCell);
-});
+acceptButton.addEventListener('click',getWinner);
+cancelButton.addEventListener('click',hideModalWindow);
 
+function getMatchData(){
 
-function dragStart(e){
-  
-  if(this.parentNode.className == 'player-list'){
-      dragOrigin = 'list';
-  }
-  else if(this.parentNode.classList.contains('player-cell')){
-    dragOrigin = 'cell';
-  }
-  playerAux = this;
-  startIndex = playersArray.indexOf(this);
+	section = this.parentNode.parentNode.classList[1];
+	matchId = this.classList[1].slice(2,4);
+
+	matchDiv = document.querySelector(`.${section} .m${matchId}`);
+
+	const player1 = matchDiv.children[0];
+	const player2 = matchDiv.children[1];
+
+	if(player1.textContent == ' ' || player2.textContent == ' '){
+		alert('Agregar jugadores');
+	}
+	else{
+
+		let name1 = player1.querySelector('.player-name').textContent;
+		let flag1 = player1.querySelector('.flag');		
+		let name2 = player2.querySelector('.player-name').textContent;
+		let flag2 = player2.querySelector('.flag');
+
+		showModalWindow(name1,flag1,name2,flag2);
+
+	}
 }
 
 
-function dragOver(e){
-  e.preventDefault();
-  // console.log(this,e.target)
-  if(dragOrigin === 'list' && e.target.parentNode.classList.contains('player-cell') ){
-    dragAllowed = false;
-  }
-  else{
-    this.style['background-color'] = "#009345";
-    endIndex = playersArray.indexOf(e.target);
-    dragAllowed = true;
-  }
+function showModalWindow(name1,flag1,name2,flag2){
+	modalWindow.style.display = 'block';
+	const players =modalWindow.querySelectorAll('.player-option');
+
+	players[0].children[2].textContent = name1;
+	players[0].children[1].innerHTML = flag1.outerHTML;
+
+	players[1].children[2].textContent = name2;
+	players[1].children[1].innerHTML = flag2.outerHTML;
+
 }
 
-function dragLeave(e){
-  e.preventDefault();
-    setTimeout(()=>{
-      this.style['background-color'] = "";
-    },10);
+function hideModalWindow(){
+	modalWindow.style.display = 'none';
 }
 
-function dragDrop(e){
-  e.preventDefault();
-  // console.log(dragOrigin,dragAllowed);
-  // console.log(this.parentNode.classList.contains('player-cell'),e.target.parentNode);
+function getWinner(){
+	
+	let selected = document.querySelector('input[name="radio1"]:checked');
+	let id = selected.id;
+	let winner;
 
-  if(dragAllowed){
+	if(id=='player1'){
+		winner = matchDiv.children[0];
+	}
+	else if(id=='player2'){
+		winner = matchDiv.children[1];
+	}
 
-    if(dragOrigin === "list"){
-      endIndex = playersArray.indexOf(this);
-      playersArray.splice(startIndex,1,this)
-      playersArray.splice(endIndex,1,playerAux);
-    }
-    else if(dragOrigin === "cell" && !this.parentNode.classList.contains('player-cell')){
-      addPlayerToList(playerAux,endIndex);
-    }
-
-    this.style['background-color'] = "";
-    renderList();
-  }
+	positionWinner(winner);
+	hideModalWindow();
 }
 
 
-function dropCell(e){
-  e.preventDefault(); 
-  
-  if(dragAllowed){
-    this.style['background-color'] = '';
-    this.append(playerAux);
-    removePlayerFromList(playerAux);
-    renderList();
-  } 
-}
+function positionWinner(winner){
+	// section
 
+	switch (matchId) {
+		case 1:
+			
+			break;
+		case 2:
+			
+			break;
+		case 3:
+			
+			break;
+		case 4:
+			
+			break;
+		case 5:
+			
+			break;
+		case 6:
+			
+			break;
+		case 7:
+			
+			break;
+		case 8:
+			
+			break;
+		case 9:
+			
+			break;
+		case 10:
+			
+			break;
+		case 11:
+			
+			break;
+		case 12:
+			
+			break;
+		case 13:
+			
+			break;
+		case 14:
+			
+			break;
+		case 15
+			
+			break;
 
-function addPlayerToList(player,index){
-  playersArray.splice(index,0,player)
-}
+		default:
+			// statements_def
+			break;
+	}
 
-
-function removePlayerFromList(player){
-  playersArray.splice(startIndex,1)
-}
-
-
-function renderList(){
-  playerList.replaceChildren();
-
-  for(let i=0;i<playersArray.length;i++){
-    playerList.append(playersArray[i])
-  }
 }
 
