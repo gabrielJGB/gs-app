@@ -27,6 +27,7 @@ function getMatchData(){
 	// if(player1.textContent == ' ' || player2.textContent == ' '){
 	// 	alert('Completar jugadores');
 	// }
+
 	if(player1.textContent == ' ' || player2.textContent == ' ' ){
 		player1.style['background-color'] = 'red';
 		player2.style['background-color'] = 'red';
@@ -81,7 +82,7 @@ function getWinner(){
 		let winnerDiv,winnerText;
 
 		if(id=='player1'){
-			matchDiv.children[1].style['font-weight'] = '100';
+			matchDiv.children[1].style['font-weight'] = '100'; //parpadeo
 			winnerDiv = matchDiv.children[0];
 			winnerText = winnerDiv.outerHTML;
 		}
@@ -149,7 +150,7 @@ function positionWinner(winner){
 			copyPasteWinner(winner,'.m15p2');
 			break;
 		case '15':
-			
+			//funcion: para llevar al cuadro final al winner del match 15
 			break;
 	}
 
@@ -165,13 +166,15 @@ function copyPasteWinner(winner,placementClass){
 
 
 /*
--reducir el espacio entre los .match usando grid area y row gap
--el radio button que queda ya seleccionado.Sacarlo para que se pueda seleccionar cada vez
--que los jugadores no se puedan arrastrar a los cell de 2da 3ra y 4ta ronda. Con una clase especial en los de 1ra ronda. y uso esa clase en los add event drag y demas
--crear cuadro final. Como se ordenan los jugadores? sorteo? o esta ya definido?
--ir copiando y pegando los jugadores a una caja que va estar justo arriba del cuadro final (son 8 jugadores)
--ver lo de pasar el ganador de la 4ta ronda a la final
+-reducir el espacio entre los .match usando grid area y row gap. (hacerlo en un un nuevo branch)
+-el radio button queda ya seleccionado.Sacarlo para que se pueda seleccionar cada vez que abro el modal. uncheck radio button js
+-que los jugadores no se puedan arrastrar a los cell de 2da 3ra y 4ta ronda. Con una clase especial en los de 1ra ronda. y uso esa clase en los add event drag y demas, asi no tienen el evento las que no tienen que tenerlo
+-crear cuadro final. Como se ordenan los jugadores ahi? sorteo o esta ya definido?
+-(si es manual lo anterior) ir copiando y pegando los ganadores de la 4ta ronda (c/seccion) a una caja que va estar justo arriba del cuadro final (son 8 jugadores). dinamica (si cambio al ganador de la seccion cambia en la caja)
 -ver lo de la api de paises para poder crear un jugador propio
+-agregar buscador de apellidos.En tiempo real (ver ejercicio de frontendmentor.com api paises)
 
+-que información guardo en la db?
+-passport o firebase para el registro
 
 */
