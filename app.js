@@ -1,8 +1,7 @@
-var axios = require("axios").default;
-const request = require("request")
+const request = require('request');
 const express = require('express');
 const countries = require('./countries.json');
-const playersFile = require('./playersFile.json');
+const playersFile = require('./playersFile.json'); //temp
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -19,7 +18,7 @@ const options = {
   url: 'https://tennis-live-data.p.rapidapi.com/rankings/ATP',
   headers: {
     'x-rapidapi-host': 'tennis-live-data.p.rapidapi.com',
-    'x-rapidapi-key': '020943499bmshb339bbc8990f055p1e1496jsnfcfb658f9421',
+    'x-rapidapi-key': process.env.API_KEY,
     useQueryString: true
   }
 };
@@ -51,6 +50,8 @@ let players = [];
 //   });
 // });
 
+//----- temporary parsed file
+
 
   const parsedData = JSON.parse(JSON.stringify(playersFile));
 
@@ -73,17 +74,13 @@ let players = [];
     });
   });
 
-
+//---------
 
 
 
 app.get('/',(req,res)=>{
   res.render('index',{players})
-})
-
-app.get('/test',(req,res)=>{
-  res.render('test')
-})
+});
 
 
 

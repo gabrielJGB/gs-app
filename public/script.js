@@ -24,8 +24,25 @@ function getMatchData(){
 	const player1 = matchDiv.children[0];
 	const player2 = matchDiv.children[1];
 
-	if(player1.textContent == ' ' || player2.textContent == ' '){
-		alert('Agregar jugadores');
+	// if(player1.textContent == ' ' || player2.textContent == ' '){
+	// 	alert('Completar jugadores');
+	// }
+	if(player1.textContent == ' ' || player2.textContent == ' ' ){
+		player1.style['background-color'] = 'red';
+		player2.style['background-color'] = 'red';
+		setTimeout(()=>{
+			player1.style['background-color'] = '';
+			player2.style['background-color'] = '';		
+		},200);
+
+		setTimeout(()=>{
+			player1.style['background-color'] = 'red';
+			player2.style['background-color'] = 'red';
+		},400);
+		setTimeout(()=>{
+			player1.style['background-color'] = '';
+			player2.style['background-color'] = '';	
+		},600);
 	}
 	else{
 
@@ -59,75 +76,102 @@ function hideModalWindow(){
 function getWinner(){
 	
 	let selected = document.querySelector('input[name="radio1"]:checked');
-	let id = selected.id;
-	let winner;
+	if(selected != null){
+		let id = selected.id;
+		let winnerDiv,winnerText;
 
-	if(id=='player1'){
-		winner = matchDiv.children[0];
-	}
-	else if(id=='player2'){
-		winner = matchDiv.children[1];
+		if(id=='player1'){
+			matchDiv.children[1].style['font-weight'] = '100';
+			winnerDiv = matchDiv.children[0];
+			winnerText = winnerDiv.outerHTML;
+		}
+		else if(id=='player2'){
+			matchDiv.children[0].style['font-weight'] = '100';
+			winnerDiv = matchDiv.children[1];
+			winnerText = winnerDiv.outerHTML;
+		}
+		
+		winnerDiv.style['font-weight'] = 'bold';
+
+		positionWinner(winnerText);
+		hideModalWindow();
+	
+	}else{
+		alert('Seleccionar ganador');
 	}
 
-	positionWinner(winner);
-	hideModalWindow();
 }
 
 
 function positionWinner(winner){
-	// section
-
+	
 	switch (matchId) {
-		case 1:
-			
+		case '1':	//el ganador del match 1 va a la posicion de arriba (p1) del match 9
+			copyPasteWinner(winner,'.m9p1');
 			break;
-		case 2:
-			
+		case '2':	//el ganador del match 2 va a la posicion de abajo (p2) del match 9
+			copyPasteWinner(winner,'.m9p2');
 			break;
-		case 3:
-			
+		case '3':
+			copyPasteWinner(winner,'.m10p1');
 			break;
-		case 4:
-			
+		case '4':
+			copyPasteWinner(winner,'.m10p2');
 			break;
-		case 5:
-			
+		case '5':
+			copyPasteWinner(winner,'.m11p1');
 			break;
-		case 6:
-			
+		case '6':
+			copyPasteWinner(winner,'.m11p2');
 			break;
-		case 7:
-			
+		case '7':
+			copyPasteWinner(winner,'.m12p1');
 			break;
-		case 8:
-			
+		case '8':
+			copyPasteWinner(winner,'.m12p2');
 			break;
-		case 9:
-			
+		case '9':
+			copyPasteWinner(winner,'.m13p1');
 			break;
-		case 10:
-			
+		case '10':
+			copyPasteWinner(winner,'.m13p2');
 			break;
-		case 11:
-			
+		case '11':
+			copyPasteWinner(winner,'.m14p1');
 			break;
-		case 12:
-			
+		case '12':
+			copyPasteWinner(winner,'.m14p2');
 			break;
-		case 13:
-			
+		case '13':
+			copyPasteWinner(winner,'.m15p1');
 			break;
-		case 14:
-			
+		case '14':
+			copyPasteWinner(winner,'.m15p2');
 			break;
-		case 15
+		case '15':
 			
-			break;
-
-		default:
-			// statements_def
 			break;
 	}
 
 }
 
+function copyPasteWinner(winner,placementClass){
+
+	const sectionDiv = document.querySelector(`.${section}`);
+
+	let placementDiv = sectionDiv.querySelector(placementClass);
+	placementDiv.innerHTML = winner;
+}
+
+
+/*
+-reducir el espacio entre los .match usando grid area y row gap
+-el radio button que queda ya seleccionado.Sacarlo para que se pueda seleccionar cada vez
+-que los jugadores no se puedan arrastrar a los cell de 2da 3ra y 4ta ronda. Con una clase especial en los de 1ra ronda. y uso esa clase en los add event drag y demas
+-crear cuadro final. Como se ordenan los jugadores? sorteo? o esta ya definido?
+-ir copiando y pegando los jugadores a una caja que va estar justo arriba del cuadro final (son 8 jugadores)
+-ver lo de pasar el ganador de la 4ta ronda a la final
+-ver lo de la api de paises para poder crear un jugador propio
+
+
+*/
