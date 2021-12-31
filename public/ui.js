@@ -1,7 +1,7 @@
 let players = document.querySelectorAll('.player');
 let playersArray = Array.from(players);
 let playerAux,endIndex,startIndex,dragOrigin,dragAllowed;
-let playerCells = document.querySelectorAll('.player-cell');
+let playerCells = document.querySelectorAll('.player-cell-move');
 let playerList = document.querySelector('.player-list');
 
 players.forEach(player=>{

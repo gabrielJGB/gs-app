@@ -60,13 +60,17 @@ function getMatchData(){
 
 function showModalWindow(name1,flag1,name2,flag2){
 	modalWindow.style.display = 'block';
-	const players =modalWindow.querySelectorAll('.player-option');
+	const players = modalWindow.querySelectorAll('.player-option');
 
 	players[0].children[2].textContent = name1;
 	players[0].children[1].innerHTML = flag1.outerHTML;
 
 	players[1].children[2].textContent = name2;
 	players[1].children[1].innerHTML = flag2.outerHTML;
+
+	modalWindow.querySelector('#player1').checked = false;
+	modalWindow.querySelector('#player2').checked = false;
+
 
 }
 
@@ -150,7 +154,7 @@ function positionWinner(winner){
 			copyPasteWinner(winner,'.m15p2');
 			break;
 		case '15':
-			//funcion: para llevar al cuadro final al winner del match 15
+			addPlayerToFinalDraw(winner);
 			break;
 	}
 
@@ -159,22 +163,34 @@ function positionWinner(winner){
 function copyPasteWinner(winner,placementClass){
 
 	const sectionDiv = document.querySelector(`.${section}`);
-
 	let placementDiv = sectionDiv.querySelector(placementClass);
 	placementDiv.innerHTML = winner;
 }
 
 
+function addPlayerToFinalDraw(winner){
+	const finalSection = document.querySelector('.final-section'); 
+	let sectionId = section.slice(7,10);
+	const cell = finalSection.querySelector(`.final-${sectionId}`);
+	cell.innerHTML = winner;
+}
+
 /*
--reducir el espacio entre los .match usando grid area y row gap. (hacerlo en un un nuevo branch)
--el radio button queda ya seleccionado.Sacarlo para que se pueda seleccionar cada vez que abro el modal. uncheck radio button js
--que los jugadores no se puedan arrastrar a los cell de 2da 3ra y 4ta ronda. Con una clase especial en los de 1ra ronda. y uso esa clase en los add event drag y demas, asi no tienen el evento las que no tienen que tenerlo
--crear cuadro final. Como se ordenan los jugadores ahi? sorteo o esta ya definido?
--(si es manual lo anterior) ir copiando y pegando los ganadores de la 4ta ronda (c/seccion) a una caja que va estar justo arriba del cuadro final (son 8 jugadores). dinamica (si cambio al ganador de la seccion cambia en la caja)
+
++reducir el espacio entre los .match usando grid area y row gap. (hacerlo en un un nuevo branch)
++que los jugadores no se puedan arrastrar a los cell de 2da 3ra y 4ta ronda. Con una clase especial en los de 1ra ronda. y uso esa clase en los add event drag y demas, asi no tienen el evento las que no tienen que tenerlo
++el radio button queda ya seleccionado.Sacarlo para que se pueda seleccionar cada vez que abro el modal. uncheck radio button js
++crear cuadro final.
++Los jugadores se agregan en orden 
+
+-agregar marcador estatico
+
 -ver lo de la api de paises para poder crear un jugador propio
+
 -agregar buscador de apellidos.En tiempo real (ver ejercicio de frontendmentor.com api paises)
 
 -que información guardo en la db?
+
 -passport o firebase para el registro
 
 */
