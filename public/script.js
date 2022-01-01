@@ -148,7 +148,9 @@ function positionWinner(winner){
 			copyPasteWinner(winner,'.m14p2');
 			break;
 		case '13':
-			copyPasteWinner(winner,'.m15p1');
+			if(section!='final-section'){
+				copyPasteWinner(winner,'.m15p1');
+			}
 			break;
 		case '14':
 			copyPasteWinner(winner,'.m15p2');
@@ -182,6 +184,8 @@ function addPlayerToFinalDraw(winner){
 +el radio button queda ya seleccionado.Sacarlo para que se pueda seleccionar cada vez que abro el modal. uncheck radio button js
 +crear cuadro final.
 +Los jugadores se agregan en orden 
+
+-agregar campeon en un div abajo
 
 -agregar marcador estatico
 
