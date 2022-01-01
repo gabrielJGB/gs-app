@@ -84,18 +84,24 @@ function getWinner(){
 	if(selected != null){
 		let id = selected.id;
 		let winnerDiv,winnerText;
+		matchDiv.children[0].style['font-weight'] = ''; 
+		matchDiv.children[1].style['font-weight'] = ''; 
 
 		if(id=='player1'){
-			matchDiv.children[1].style['font-weight'] = '100'; //parpadeo
+			console.log(matchDiv.children[1])
+			matchDiv.children[1].style['font-weight'] = '100'; 
 			winnerDiv = matchDiv.children[0];
-			winnerText = winnerDiv.outerHTML;
+			
+			
 		}
 		else if(id=='player2'){
-			matchDiv.children[0].style['font-weight'] = '100';
+			console.log(matchDiv.children[0])
+			matchDiv.children[0].style['font-weight'] = '100'; 
 			winnerDiv = matchDiv.children[1];
-			winnerText = winnerDiv.outerHTML;
+			
 		}
 		
+		winnerText = winnerDiv.outerHTML;
 		winnerDiv.style['font-weight'] = 'bold';
 
 		positionWinner(winnerText);
@@ -148,7 +154,9 @@ function positionWinner(winner){
 			copyPasteWinner(winner,'.m14p2');
 			break;
 		case '13':
-			copyPasteWinner(winner,'.m15p1');
+			if(section!='final-section'){
+				copyPasteWinner(winner,'.m15p1');
+			}
 			break;
 		case '14':
 			copyPasteWinner(winner,'.m15p2');
