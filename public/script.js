@@ -84,18 +84,24 @@ function getWinner(){
 	if(selected != null){
 		let id = selected.id;
 		let winnerDiv,winnerText;
+		matchDiv.children[0].style['font-weight'] = ''; 
+		matchDiv.children[1].style['font-weight'] = ''; 
 
 		if(id=='player1'){
-			matchDiv.children[1].style['font-weight'] = '100'; //parpadeo
+			console.log(matchDiv.children[1])
+			matchDiv.children[1].style['font-weight'] = '100'; 
 			winnerDiv = matchDiv.children[0];
-			winnerText = winnerDiv.outerHTML;
+			
+			
 		}
 		else if(id=='player2'){
-			matchDiv.children[0].style['font-weight'] = '100';
+			console.log(matchDiv.children[0])
+			matchDiv.children[0].style['font-weight'] = '100'; 
 			winnerDiv = matchDiv.children[1];
-			winnerText = winnerDiv.outerHTML;
+			
 		}
 		
+		winnerText = winnerDiv.outerHTML;
 		winnerDiv.style['font-weight'] = 'bold';
 
 		positionWinner(winnerText);

@@ -64,6 +64,17 @@ grid-area: 1/7/2/7;
   row-gap: 5px;
 }
 	
+.final-container {
+  display: grid;
+  grid-template-columns:2fr 0.4fr 0.5fr 0.5fr 2fr 0.4fr 0.5fr 0.5fr 2fr 0.4fr 0.5fr 0.5fr 2fr 0.4fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  row-gap: 5px;
+}
+
+.final-section{
+  margin-bottom: 30px;
+}
+
 .c1,.c2,.c3,.c4,.c5,.c6,.c7{
 	border-top: solid 3px black;
 	border-bottom: solid 3px black;
@@ -75,6 +86,31 @@ grid-area: 1/7/2/7;
   border-top: solid 3px black;
 }
 
+.champion{
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: 0 auto 100px auto;
+}
+
+.champion div{
+  font-size: 25px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+.champion span{
+  padding: 10px 20px;
+  font-size: 17px;
+  background-color: #ababab;
+  width: ;
+}
+
+.champion .flag{
+  width: 20px;
+  height: 15px;
+}
 
 .m1      { grid-area: 1 / 1 / 3 / 2 }
 .m2      { grid-area: 3 / 1 / 5 / 2 }
@@ -425,6 +461,12 @@ grid-area: 1/7/2/7;
   <a href="#section8">Sección 8</a>
   <a href="#final">Final</a>
 </div>
+
+
+<div class="create">
+        <p>Lorem, ipsum, dolor sit amet consectetur adipisicing elit. Aperiam rerum nostrum ullam aspernatur nemo pariatur ipsa mollitia sint, assumenda, eum necessitatibus reiciendis dolorum dicta possimus rem, similique, labore ab recusandae!</p>
+</div>
+
 
 <div class="player-list">
 
@@ -1478,13 +1520,13 @@ grid-area: 1/7/2/7;
     <h2>Final</h2>
 
     <div class="table-header">
-        <div class="t1">Primera ronda</div>
-        <div class="t2">Segunda ronda</div>
-        <div class="t3">Tercera ronda</div>
+        <div class="t1">Cuartos de final</div>
+        <div class="t2">Semifinal</div>
+        <div class="t3">Final</div>
         
       </div>
       
-    <div class="container">
+    <div class="final-container">
 
 
       <div class="match m1">
@@ -1548,6 +1590,13 @@ grid-area: 1/7/2/7;
       <button class="button-info bm10">&#10095;</button>
       <button class="button-info bm13">&#10095;</button>
     </div>
+  </div>
+
+    <div class="champion">    
+      <div>Campeón</div>
+      <span class="player-name"><img src="https://flagcdn.com/w320/ar.png" class="flag">Schwartzman</span>
+    </div>
+
   </div>
 
 </div>
