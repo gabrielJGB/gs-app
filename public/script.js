@@ -2,6 +2,8 @@ import {} from './ui.js';
 
 const buttons = document.querySelectorAll('.button-info');
 const modalWindow = document.querySelector('.modal-score');
+const modalAddPlayer = document.querySelector('.modal-add-player');
+const addPlayerButton = document.querySelector('.show-add-window-button')
 const acceptButton = document.querySelector('.accept-button');
 const cancelButton = document.querySelector('.cancel-button');
 let matchId,matchDiv,section;
@@ -13,6 +15,8 @@ buttons.forEach(button=>{
 
 acceptButton.addEventListener('click',getWinner);
 cancelButton.addEventListener('click',hideModalWindow);
+
+addPlayerButton.addEventListener('click',showAddPlayerWindow);
 
 function getMatchData(){
 
@@ -88,20 +92,18 @@ function getWinner(){
 		matchDiv.children[1].style['font-weight'] = ''; 
 
 		if(id=='player1'){
-			console.log(matchDiv.children[1])
 			matchDiv.children[1].style['font-weight'] = '100'; 
 			winnerDiv = matchDiv.children[0];
 			
 			
 		}
 		else if(id=='player2'){
-			console.log(matchDiv.children[0])
 			matchDiv.children[0].style['font-weight'] = '100'; 
 			winnerDiv = matchDiv.children[1];
 			
 		}
 		
-		winnerText = winnerDiv.outerHTML;
+		winnerText = winnerDiv.children[0].outerHTML;
 		winnerDiv.style['font-weight'] = 'bold';
 
 		positionWinner(winnerText);
@@ -117,10 +119,10 @@ function getWinner(){
 function positionWinner(winner){
 	
 	switch (matchId) {
-		case '1':	//el ganador del match 1 va a la posicion de arriba (p1) del match 9
+		case '1':	
 			copyPasteWinner(winner,'.m9p1');
 			break;
-		case '2':	//el ganador del match 2 va a la posicion de abajo (p2) del match 9
+		case '2':	
 			copyPasteWinner(winner,'.m9p2');
 			break;
 		case '3':
@@ -156,6 +158,8 @@ function positionWinner(winner){
 		case '13':
 			if(section!='final-section'){
 				copyPasteWinner(winner,'.m15p1');
+			}else{
+				
 			}
 			break;
 		case '14':
@@ -167,6 +171,7 @@ function positionWinner(winner){
 	}
 
 }
+
 
 function copyPasteWinner(winner,placementClass){
 
@@ -180,8 +185,14 @@ function addPlayerToFinalDraw(winner){
 	const finalSection = document.querySelector('.final-section'); 
 	let sectionId = section.slice(7,10);
 	const cell = finalSection.querySelector(`.final-${sectionId}`);
+	console.log(cell+'\n'+cell.innerHTML+'\n'+winner)
 	cell.innerHTML = winner;
 }
+
+function showAddPlayerWindow(){
+	modalAddPlayer.style.display = 'flex';
+}
+
 
 /*
 
