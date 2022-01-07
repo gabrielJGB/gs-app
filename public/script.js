@@ -2,8 +2,6 @@ import {} from './ui.js';
 
 const buttons = document.querySelectorAll('.button-info');
 const modalWindow = document.querySelector('.modal-score');
-const modalAddPlayer = document.querySelector('.modal-add-player');
-const addPlayerButton = document.querySelector('.show-add-window-button')
 const acceptButton = document.querySelector('.accept-button');
 const cancelButton = document.querySelector('.cancel-button');
 let matchId,matchDiv,section;
@@ -15,8 +13,6 @@ buttons.forEach(button=>{
 
 acceptButton.addEventListener('click',getWinner);
 cancelButton.addEventListener('click',hideModalWindow);
-
-addPlayerButton.addEventListener('click',showAddPlayerWindow);
 
 function getMatchData(){
 
@@ -189,9 +185,7 @@ function addPlayerToFinalDraw(winner){
 	cell.innerHTML = winner;
 }
 
-function showAddPlayerWindow(){
-	modalAddPlayer.style.display = 'flex';
-}
+
 
 
 /*

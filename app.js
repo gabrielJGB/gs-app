@@ -32,19 +32,19 @@ let players = [];
 
 //   parsedData.results.rankings.forEach(player=>{
   
-//     let flagSvg = ''
+//     let flagImg = ''
 
 //     countries.forEach(country=>{
       
 //       if(country.name.common === player.country){
-//           flagSvg = country.flags.png
+//           flagImg = country.flags.png
 //       }
 //     });
 
 
 //     players.push({
 //       "ranking":player.ranking,
-//       "flag":flagSvg,
+//       "flag":flagImg,
 //       "name":player.last_name
 //     });
 //   });
@@ -55,21 +55,35 @@ let players = [];
 
   const parsedData = JSON.parse(JSON.stringify(playersFile));
 
+  delete parsedData.results.rankings[13]
+
   parsedData.results.rankings.forEach(player=>{
   
-    let flagSvg = ''
+    let flagImg = ''
 
     countries.forEach(country=>{
-      
-      if(country.name.common === player.country){
-          flagSvg = country.flags.png
+        
+      if(player.country === 'Bosnia & Herzegovina'){
+        flagImg = countries[4].flags.png;
+      }
+      if(player.country === 'Chinese Taipei'){
+        flagImg = countries[185].flags.png;
+      }
+      if(player.country === 'Czech Republic'){
+        flagImg = countries[80].flags.png;
+      }
+      else if(player.country === 'USA'){
+        flagImg = countries[157].flags.png;
+      }
+      else if(country.name.common === player.country){
+          flagImg = country.flags.png
       }
     });
 
 
     players.push({
       "ranking":player.ranking,
-      "flag":flagSvg,
+      "flag":flagImg,
       "name":player.last_name
     });
   });
@@ -81,6 +95,7 @@ let players = [];
 app.get('/',(req,res)=>{
   res.render('index',{players})
 });
+
 
 
 

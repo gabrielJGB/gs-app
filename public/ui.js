@@ -4,13 +4,17 @@ let playerAux,endIndex,startIndex,dragOrigin,dragAllowed;
 let playerCells = document.querySelectorAll('.player-cell-move');
 let playerList = document.querySelector('.player-list');
 
-players.forEach(player=>{
-  player.addEventListener('dragover',dragOver);
-  player.addEventListener('dragenter',dragOver);
-  player.addEventListener('dragleave',dragLeave);
-  player.addEventListener('dragstart',dragStart); 
-  player.addEventListener('drop',dragDrop);
-});
+addEvents(players);
+
+function addEvents(players){
+    players.forEach(player=>{
+      player.addEventListener('dragover',dragOver);
+      player.addEventListener('dragenter',dragOver);
+      player.addEventListener('dragleave',dragLeave);
+      player.addEventListener('dragstart',dragStart); 
+      player.addEventListener('drop',dragDrop);
+  });
+}
 
 playerCells.forEach(cell=>{
   cell.addEventListener('dragover',dragOver);
@@ -18,7 +22,6 @@ playerCells.forEach(cell=>{
   cell.addEventListener('dragleave',dragLeave);
   cell.addEventListener('drop',dropCell);
 });
-
 
 
 export function dragStart(e){
@@ -105,3 +108,56 @@ function renderList(){
 }
 
 
+
+
+
+const modalAddPlayer = document.querySelector('.modal-add-player');
+const modalCancelButton = document.querySelector('.cancel-player-button');
+const modalAcceptButton = document.querySelector('.accept-player-button');
+const addPlayerButton = document.querySelector('.show-add-window-button')
+
+addPlayerButton.addEventListener('click',showAddPlayerWindow);
+modalCancelButton.addEventListener('click',hideAddPlayerWindow);
+modalAcceptButton.addEventListener('click',addNewPlayerToList);
+
+function showAddPlayerWindow(){
+  modalAddPlayer.style.display = 'flex';
+}
+
+
+function hideAddPlayerWindow(){
+  modalAddPlayer.style = 'none';
+}
+
+
+const addedPlayersList = document.querySelector('.added-players');
+
+let addedPlayersArray = Array.from(addedPlayersList);
+
+
+function addNewPlayerToList(){
+    let name = modalAddPlayer.querySelector('#p-name').value;
+    let ranking = modalAddPlayer.querySelector('#p-ranking').value;
+    let country = modalAddPlayer.querySelector('#country-list').value;
+    let div = document.createElement('DIV');
+    div.innerHTML = `
+          
+            <span class="player-ranking">${ranking}</span>.
+            <img src="https://flagcdn.com/w320/de.png" class="flag"> 
+            <span class="player-name">${name}</span>
+      `;
+
+    div.className = "player";
+    div.draggable = "true";
+
+    addEvents([div]);
+
+    addedPlayersArray.push(div);
+    addedPlayersList.replaceChildren();
+
+    for(let i=0;i<addedPlayersArray.length;i++){
+      addedPlayersList.append(addedPlayersArray[i])
+    }
+
+    hideAddPlayerWindow();
+}
