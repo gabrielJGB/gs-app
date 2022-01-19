@@ -111,23 +111,23 @@ function renderList(){
 
 
 
-const modalAddPlayer = document.querySelector('.modal-add-player');
-const modalCancelButton = document.querySelector('.cancel-player-button');
-const modalAcceptButton = document.querySelector('.accept-player-button');
-const addPlayerButton = document.querySelector('.show-add-window-button')
+// const modalAddPlayer = document.querySelector('.modal-add-player');
+// const modalCancelButton = document.querySelector('.cancel-player-button');
+// const modalAcceptButton = document.querySelector('.accept-player-button');
+// const addPlayerButton = document.querySelector('.show-add-window-button')
 
-addPlayerButton.addEventListener('click',showAddPlayerWindow);
-modalCancelButton.addEventListener('click',hideAddPlayerWindow);
-// modalAcceptButton.addEventListener('click',addNewPlayerToList);
+// addPlayerButton.addEventListener('click',showAddPlayerWindow);
+// modalCancelButton.addEventListener('click',hideAddPlayerWindow);
+// // modalAcceptButton.addEventListener('click',addNewPlayerToList);
 
-function showAddPlayerWindow(){
-  modalAddPlayer.style.display = 'flex';
-}
+// function showAddPlayerWindow(){
+//   modalAddPlayer.style.display = 'flex';
+// }
 
 
-function hideAddPlayerWindow(){
-  modalAddPlayer.style = 'none';
-}
+// function hideAddPlayerWindow(){
+//   modalAddPlayer.style = 'none';
+// }
 
 
 // const addedPlayersList = document.querySelector('.added-players');
