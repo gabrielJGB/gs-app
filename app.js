@@ -25,45 +25,18 @@ const options = {
 
 let players = [];
 
-// request(options, function (error, response, body) {
-//   if (error) throw new Error(error);
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
 
-//   const parsedData = JSON.parse(body);
-
-//   parsedData.results.rankings.forEach(player=>{
-  
-//     let flagImg = ''
-
-//     countries.forEach(country=>{
-      
-//       if(country.name.common === player.country){
-//           flagImg = country.flags.png
-//       }
-//     });
-
-
-//     players.push({
-//       "ranking":player.ranking,
-//       "flag":flagImg,
-//       "name":player.last_name
-//     });
-//   });
-// });
-
-//----- temporary parsed file
-
-
-  const parsedData = JSON.parse(JSON.stringify(playersFile));
-
-  delete parsedData.results.rankings[13]
+  const parsedData = JSON.parse(body);
 
   parsedData.results.rankings.forEach(player=>{
   
     let flagImg = ''
 
     countries.forEach(country=>{
-        
-      if(player.country === 'Bosnia & Herzegovina'){
+      
+            if(player.country === 'Bosnia & Herzegovina'){
         flagImg = countries[4].flags.png;
       }
       if(player.country === 'Chinese Taipei'){
@@ -87,6 +60,45 @@ let players = [];
       "name":player.last_name
     });
   });
+});
+
+
+
+
+  // const parsedData = JSON.parse(JSON.stringify(playersFile));
+
+  // delete parsedData.results.rankings[13]
+
+  // parsedData.results.rankings.forEach(player=>{
+  
+  //   let flagImg = ''
+
+  //   countries.forEach(country=>{
+        
+  //     if(player.country === 'Bosnia & Herzegovina'){
+  //       flagImg = countries[4].flags.png;
+  //     }
+  //     if(player.country === 'Chinese Taipei'){
+  //       flagImg = countries[185].flags.png;
+  //     }
+  //     if(player.country === 'Czech Republic'){
+  //       flagImg = countries[80].flags.png;
+  //     }
+  //     else if(player.country === 'USA'){
+  //       flagImg = countries[157].flags.png;
+  //     }
+  //     else if(country.name.common === player.country){
+  //         flagImg = country.flags.png
+  //     }
+  //   });
+
+
+  //   players.push({
+  //     "ranking":player.ranking,
+  //     "flag":flagImg,
+  //     "name":player.last_name
+  //   });
+  // });
 
 //---------
 

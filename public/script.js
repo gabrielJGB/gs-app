@@ -196,7 +196,7 @@ function addPlayerToFinalDraw(winner){
 +crear cuadro final.
 +Los jugadores se agregan en orden 
 
--agregar campeon en un div abajo
+
 
 -agregar marcador estatico
 
